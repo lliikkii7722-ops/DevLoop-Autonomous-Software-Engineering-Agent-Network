@@ -27,7 +27,7 @@ public class AgentOutput {
     private String prompt;
 
     @Lob
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(columnDefinition = "TEXT")
     private String response;
 
     private LocalDateTime createdAt;
