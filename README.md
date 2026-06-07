@@ -1,5 +1,23 @@
 # DevLoop – Autonomous Software Engineering Agent Network
 
+![Frontend](https://img.shields.io/badge/Frontend-React-blue)
+![Backend](https://img.shields.io/badge/Backend-Spring%20Boot-green)
+![Database](https://img.shields.io/badge/Database-PostgreSQL-blue)
+![Security](https://img.shields.io/badge/Security-JWT-black)
+![Deployment](https://img.shields.io/badge/Frontend-Netlify-success)
+![Deployment](https://img.shields.io/badge/Backend-Render-purple)
+![Container](https://img.shields.io/badge/Docker-Enabled-blue)
+![AI](https://img.shields.io/badge/AI-Agent%20Network-orange)
+
+## Live Demo
+
+Frontend:
+https://devloop-frontend.netlify.app/
+
+Backend:
+https://devloop-backend.onrender.com/
+
+---
 ## Overview
 
 DevLoop is an AI-powered Software Engineering Management Platform designed to automate and optimize the Software Development Life Cycle (SDLC).
