@@ -28,15 +28,15 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/register", "/api/auth/login").permitAll()
 
-                        .requestMatchers("/api/projects/**").hasAnyRole("ADMIN", "PROJECT_MANAGER")
-                        .requestMatchers("/api/sprints/**").hasAnyRole("ADMIN", "PROJECT_MANAGER")
-                        .requestMatchers("/api/team/**").hasAnyRole("ADMIN", "PROJECT_MANAGER")
+                        .requestMatchers("/api/projects/**").hasAnyRole("ADMIN", "PROJECT_MANAGER", "DEVELOPER")
+                        .requestMatchers("/api/sprints/**").hasAnyRole("ADMIN", "PROJECT_MANAGER", "DEVELOPER")
+                        .requestMatchers("/api/team/**").hasAnyRole("ADMIN", "PROJECT_MANAGER", "DEVELOPER")
+                        .requestMatchers("/api/analytics/**").hasAnyRole("ADMIN", "PROJECT_MANAGER", "DEVELOPER")
+                        .requestMatchers("/api/health/**").hasAnyRole("ADMIN", "PROJECT_MANAGER", "DEVELOPER")
 
                         .requestMatchers("/api/tasks/**").hasAnyRole("ADMIN", "PROJECT_MANAGER", "DEVELOPER", "TESTER")
                         .requestMatchers("/api/agents/**").hasAnyRole("ADMIN", "PROJECT_MANAGER", "DEVELOPER", "TESTER", "DEVOPS")
                         .requestMatchers("/api/chat/**").hasAnyRole("ADMIN", "PROJECT_MANAGER", "DEVELOPER", "TESTER", "DEVOPS")
-                        .requestMatchers("/api/analytics/**").hasAnyRole("ADMIN", "PROJECT_MANAGER")
-                        .requestMatchers("/api/health/**").hasAnyRole("ADMIN", "PROJECT_MANAGER")
 
                         .requestMatchers("/api/users/me").authenticated()
 
