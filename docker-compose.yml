@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend/devloop-backend
+    container_name: devloop-backend
+    ports:
+      - "2008:2008"
+    environment:
+      DB_URL: jdbc:mysql://host.docker.internal:3306/devloop_db
+      DB_USERNAME: root
+      DB_PASSWORD: "@123Chinnu"
+      OLLAMA_API_URL: http://host.docker.internal:11434/api/generate
+      OLLAMA_MODEL: llama3.1

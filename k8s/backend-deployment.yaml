@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: devloop-backend
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: devloop-backend
+
+  template:
+    metadata:
+      labels:
+        app: devloop-backend
+
+    spec:
+      containers:
+        - name: devloop-backend
+
+          image: docker.io/library/devloop-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 2008
+
+          env:
+            - name: DB_URL
+              value: jdbc:mysql://host.docker.internal:3306/devloop_db
+
+            - name: DB_USERNAME
+              value: root
+
+            - name: DB_PASSWORD
+              value: "@123Chinnu"
+
+            - name: OLLAMA_API_URL
+              value: http://host.docker.internal:11434/api/generate
+
+            - name: OLLAMA_MODEL
+              value: llama3.1
